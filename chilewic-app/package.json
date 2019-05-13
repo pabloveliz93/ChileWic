@@ -5,11 +5,15 @@
     "@babel/preset-react": "^7.0.0",
     "@rails/webpacker": "^4.0.2",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "formik": "^1.5.4",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
+    "react-addons-update": "^15.6.2",
     "react-dom": "^16.8.6",
     "react-router": "^5.0.0",
-    "react-router-dom": "^5.0.0"
+    "react-router-dom": "^5.0.0",
+    "react-spinners": "^0.5.4",
+    "yup": "^0.27.0"
   },
   "devDependencies": {
     "webpack-dev-server": "^3.3.1"
