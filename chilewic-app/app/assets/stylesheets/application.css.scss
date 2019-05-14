@@ -11,7 +11,16 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_tree .
+ *= css/style.css
+
  *= require_self
+
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "lib/bootstrap/css/bootstrap.min.css";
+@import "css/style.css";
+@import "lib/font-awesome/css/font-awesome.min.css";
+@import "lib/animate/animate.min.css";
+@import "lib/venobox/venobox.css";
+@import "lib/owlcarousel/assets/owl.carousel.min.css";
