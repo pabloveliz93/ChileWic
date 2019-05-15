@@ -1,0 +1,68 @@
+<div class="container mb-5">
+  <div class="card">
+    <div class="card-body">
+      <%= content_for :page_title, "Lista de ciudades" %>
+
+      <div class="row mb-2">
+        <div class="col sm-4">
+          <%= link_to "+ Añadir una ciudad", new_admin_city_path, class: 'btn btn-danger btn-rounded' %>
+        </div>
+      </div>
+
+      <% if @cities.empty? %>
+        <div class="alert alert-warning" style="display: inline-block">
+          Aún no se han añadido ciudades
+        </div>
+      <% else %>
+        <table id="citiesTable" class="table dt-bootstrap4 dt-responsive table-striped nowrap">
+          <thead>
+            <tr>
+              <th>Descripción</th>
+              <th>País</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @cities.each do |city| %>
+              <tr>
+                <td><%= city[:description] %></td>
+            <% unless city[:country].nil? %>
+                        <td><%= city[:country][:description] %></td>
+                      <% else %>
+                        <td>--</td>
+                      <% end %>
+
+                <td>
+                  <%= link_to edit_admin_city_path(city[:id]), class: "btn btn-primary" do %>
+                    <i class="mdi mdi-circle-edit-outline"></i> Editar
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<%= javascript_tag defer: 'defer' do -%>
+  var dataTableCitiesIndex = null;
+  if (!$("#citiesTable_wrapper").length){
+    dataTableCitiesIndex = $('#citiesTable').DataTable({
+      keys: true,
+      destroy: true,
+      buttons: [],
+      'language' : {
+        'url': '/datatables.spanish.json',
+        'paginate': {
+        'previous': "<i class='mdi mdi-chevron-left'>",
+        'next': "<i class='mdi mdi-chevron-right'>"
+        }
+      },
+        'drawCallback': function () {
+      $('.dataTables_paginate > .pagination').addClass('pagination-rounded');
+    }
+    });
+  }
+<% end -%>
