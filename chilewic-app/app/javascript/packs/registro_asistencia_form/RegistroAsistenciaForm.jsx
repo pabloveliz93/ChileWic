@@ -34,7 +34,7 @@ class CitiesForm extends Component {
     let ui = this.state.ui;
     ui.isSubmitting = true;
     this.setState({ ui });
-
+}
     //Axios es una promesa, se debe trabajar como tal
 
   /*  const countries_promise = axios({
@@ -132,7 +132,7 @@ class CitiesForm extends Component {
         <Formik
           showMessage={this.showMessage}
           enableReinitialize={true}
-          initialValues={}
+          initialValues={""}
           validationSchema={CitiesSchema}
           onSubmit={(values, { setSubmitting }) => {
             // const token = document.getElementsByName("csrf-token")[0].content;
@@ -141,9 +141,11 @@ class CitiesForm extends Component {
               ? `/admin/cities/${this.props.cityId}.json`
               : `/admin/cities.json`;*/
             /*const method = this.props.cityId ? "PUT" : "POST";*/
-            axios(url, {
-              "POST",
-              `/registro_asistencia.json`,
+            const url = `/registro_asistencia.json`;
+            const method = "POST";
+            axios(url,{
+              method,
+              url,
               responseType: "json",
               headers: {
                 "Content-Type": "application/json"

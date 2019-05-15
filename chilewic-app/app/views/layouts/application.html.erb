@@ -12,6 +12,7 @@
 
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
+        <%= javascript_pack_tag 'registro_asistencia_form' %>
 
 
     <!-- Bootstrap -->
@@ -33,7 +34,7 @@
   <body>
 
       <%= render 'layouts/navigation' %>
-      
+
       <%= render 'layouts/intro' %>
       <%= yield %>
 

@@ -1,20 +1,20 @@
 <div class="container mb-5">
   <div class="card">
     <div class="card-body">
-      <%= content_for :page_title, "Lista de ciudades" %>
+      <%= content_for :page_title, "Lista de asistencia" %>
 
       <div class="row mb-2">
         <div class="col sm-4">
-          <%= link_to "+ Añadir una ciudad", new_admin_city_path, class: 'btn btn-danger btn-rounded' %>
+          <%= link_to "+ Añadir asistencia", new_asistencia_path, class: 'btn btn-danger btn-rounded' %>
         </div>
       </div>
 
-      <% if @cities.empty? %>
+      <% if @asistencias.empty? %>
         <div class="alert alert-warning" style="display: inline-block">
-          Aún no se han añadido ciudades
+          Aún no se han añadido asistencia
         </div>
       <% else %>
-        <table id="citiesTable" class="table dt-bootstrap4 dt-responsive table-striped nowrap">
+        <table id="asistenciasTable" class="table dt-bootstrap4 dt-responsive table-striped nowrap">
           <thead>
             <tr>
               <th>Descripción</th>
@@ -23,17 +23,17 @@
             </tr>
           </thead>
           <tbody>
-            <% @cities.each do |city| %>
+            <% @asistencias.each do |asistencia| %>
               <tr>
-                <td><%= city[:description] %></td>
-            <% unless city[:country].nil? %>
-                        <td><%= city[:country][:description] %></td>
+                <td><%= asistencia[:description] %></td>
+            <% unless asistencia[:country].nil? %>
+                        <td><%= asistencia[:country][:description] %></td>
                       <% else %>
                         <td>--</td>
                       <% end %>
 
                 <td>
-                  <%= link_to edit_admin_city_path(city[:id]), class: "btn btn-primary" do %>
+                  <%= link_to edit__asistencia_path(asistencia[:id]), class: "btn btn-primary" do %>
                     <i class="mdi mdi-circle-edit-outline"></i> Editar
                   <% end %>
                 </td>
@@ -47,9 +47,9 @@
 </div>
 
 <%= javascript_tag defer: 'defer' do -%>
-  var dataTableCitiesIndex = null;
-  if (!$("#citiesTable_wrapper").length){
-    dataTableCitiesIndex = $('#citiesTable').DataTable({
+  var dataTableasistenciasIndex = null;
+  if (!$("#asistenciasTable_wrapper").length){
+    dataTableAsistenciasIndex = $('#asistenciasTable').DataTable({
       keys: true,
       destroy: true,
       buttons: [],
