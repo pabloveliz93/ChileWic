@@ -1,4 +1,14 @@
 <p id="notice"><%= notice %></p>
+<h1>Datos de la asistencia</h1>
+<p>
+  <strong>Nombre:</strong>
+  <%= @asistencium.nombre %>
+</p>
+
+<p>
+  <strong>Apellido:</strong>
+  <%= @asistencium.apellido %>
+</p>
 
 <p>
   <strong>Correo:</strong>
@@ -6,9 +16,15 @@
 </p>
 
 <p>
-  <strong>Nombre:</strong>
-  <%= @asistencium.nombre %>
+  <strong>Teléfono:</strong>
+  <%= @asistencium.telefono %>
 </p>
 
-<%= link_to 'Edit', edit_asistencium_path(@asistencium) %> |
-<%= link_to 'Back', asistencia_path %>
+<p>
+  <strong>Institución:</strong>
+  <%= @asistencium.institucion %>
+</p>
+
+
+<%= link_to 'Editar datos', edit_asistencium_path(@asistencium) %> |
+<%= link_to 'Volver', asistencia_path %>
