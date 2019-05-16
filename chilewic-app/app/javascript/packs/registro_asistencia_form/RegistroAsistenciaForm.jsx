@@ -2,24 +2,24 @@ import React, { Component } from "react";
 import { Formik, ErrorMessage, Field } from "formik";
 import * as Yup from "yup";
 import classNames from "classnames";
-import Spinner from "../Spinner";
 import FlashMessage from "../FlashMessage";
 import axios from "axios";
 import * as _ from "lodash";
 //import { CustomSelect } from "../CustomInputs";
 
-const CitiesSchema = Yup.object().shape({
-  description: Yup.string().required("Campo requerido"),
-  country: Yup.string().required("Campo requerido")
+const RegistroAsistenciaSchema = Yup.object().shape({
+  /*nombre: Yup.string().required("Campo requerido"),
+  country: Yup.string().required("Campo requerido")*/
 });
 
-class CitiesForm extends Component {
+class RegistroAsistenciaForm extends Component {
   state = {
     persona: {
       nombre: "",
       apellido: "",
-      rut: "",
-      mail: ""
+      mail: "",
+      telefono: "",
+      institucion: ""
     },
     ui: {
       isSubmitting: false,
@@ -120,7 +120,7 @@ class CitiesForm extends Component {
         msg={this.state.ui.message}
       />
     ) : null;
-  //  const button_label = this.props.cityId ? "Editar" : "Agregar nueva";
+    const button_label = "Agregar";//this.props.cityId ? "Editar" : "Agregar nueva";
   /*  const countries_options = this.state.countries.map(country => (
       <option value={country.id} key={country.id}>
         {country.description}
@@ -133,7 +133,7 @@ class CitiesForm extends Component {
           showMessage={this.showMessage}
           enableReinitialize={true}
           initialValues={""}
-          validationSchema={CitiesSchema}
+          validationSchema={RegistroAsistenciaSchema}
           onSubmit={(values, { setSubmitting }) => {
             // const token = document.getElementsByName("csrf-token")[0].content;
             const token = null;
@@ -185,13 +185,13 @@ class CitiesForm extends Component {
           }) => {
             return (
               <React.Fragment>
-                <Spinner loading={isSubmitting || this.state.ui.isSubmitting} />
                 <form onSubmit={handleSubmit} className="">
                   <div className="card">
                     <div className="card-body">
                       <div className="row">
                         <div className="col-lg-6">
                           <div className="form-group mb-3">
+
                             <label htmlFor="nombre">
                               Nombre
                             </label>
@@ -203,9 +203,9 @@ class CitiesForm extends Component {
                                 "form-control " +
                                 classNames({
                                   "is-invalid":
-                                    touched.description && errors.description,
+                                    touched.nombre && errors.nombre,
                                   "is-valid":
-                                    touched.description && !errors.description
+                                    touched.nombre && !errors.nombre
                                 })
                               }
                             />
@@ -219,16 +219,140 @@ class CitiesForm extends Component {
                                 </div>
                               )}
                             </ErrorMessage>
+
+                            <label htmlFor="mail">
+                              E-Mail
+                            </label>
+                          <Field
+                          type="text"
+                          name="mail"
+                          className={
+                            "form-control " +
+                            classNames({
+                              "is-invalid":
+                                touched.mail && errors.mail,
+                              "is-valid":
+                                touched.mail && !errors.mail
+                            })
+                          }
+                          />
+                          <ErrorMessage name="mail">
+                          {msg => (
+                            <div
+                              className="invalid-feedback"
+                              style={{ display: "block" }}
+                            >
+                              {msg}
+                            </div>
+                          )}
+                          </ErrorMessage>
+
+
+                        </div>
+                        </div>
+                        <div className="col-lg-6">
+                          <div className="form-group mb-3">
+
+
+                          <label htmlFor="apellido">
+                            Apellido
+                          </label>
+                        <Field
+                        type="text"
+                        name="apellido"
+                        className={
+                          "form-control " +
+                          classNames({
+                            "is-invalid":
+                              touched.apellido && errors.apellido,
+                            "is-valid":
+                              touched.apellido && !errors.apellido
+                          })
+                        }
+                        />
+                        <ErrorMessage name="apellido">
+                        {msg => (
+                          <div
+                            className="invalid-feedback"
+                            style={{ display: "block" }}
+                          >
+                            {msg}
+                          </div>
+                        )}
+                        </ErrorMessage>
+
+
+
+                        <label htmlFor="telefono">
+                          Teléfono
+                        </label>
+                    <Field
+                      type="text"
+                      name="telefono"
+                      className={
+                        "form-control " +
+                        classNames({
+                          "is-invalid":
+                            touched.telefono && errors.telefono,
+                          "is-valid":
+                            touched.telefono && !errors.telefono
+                        })
+                      }
+                    />
+                    <ErrorMessage name="telefono">
+                      {msg => (
+                        <div
+                          className="invalid-feedback"
+                          style={{ display: "block" }}
+                        >
+                          {msg}
+                        </div>
+                      )}
+                    </ErrorMessage>
+
+                    </div>
+                    </div>
+                    <div className="col-lg-6">
+                      <div className="form-group mb-3">
+
+
+                    <label htmlFor="institucion">
+                      Institución
+                    </label>
+                  <Field
+                    type="text"
+                    name="institucion"
+                    className={
+                      "form-control " +
+                      classNames({
+                        "is-invalid":
+                          touched.institucion && errors.institucion,
+                        "is-valid":
+                          touched.institucion && !errors.institucion
+                      })
+                    }
+                  />
+                  <ErrorMessage name="institucion">
+                    {msg => (
+                      <div
+                        className="invalid-feedback"
+                        style={{ display: "block" }}
+                      >
+                        {msg}
+                      </div>
+                    )}
+                  </ErrorMessage>
+
+
                           </div>
                         </div>
-
                       </div>
                       <button
                         type="submit"
                         className="btn btn-primary"
                         disabled={isSubmitting}
                       >
-                        {`${button_label} ciudad`}
+                        {`${button_label} asistencia`}
                       </button>
                     </div>
                   </div>
@@ -242,4 +366,4 @@ class CitiesForm extends Component {
   }
 }
 
-export default CitiesForm;
+export default RegistroAsistenciaForm;
