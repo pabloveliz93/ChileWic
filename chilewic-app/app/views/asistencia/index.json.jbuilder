@@ -1,1 +1,1 @@
-json.array! @cities
+json.array! @asistencia, partial: 'asistencia/asistencium', as: :asistencium

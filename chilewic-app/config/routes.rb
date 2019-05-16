@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  root 'home#index'
+  root 'asistencia#index'
 
-  match "*path", to: "home#index", via: :all
+  match "*path", to: "asistencia#index", via: :all
     resources :asistencia
 end

@@ -1,4 +1,6 @@
-<div class="container">
-  <%= content_for :page_title, "Editar la ciudad" %>
-  <div id="city_edit" data-city-id=<%= @city[:id] %>></div>
-</div>
+<h1>Editing Asistencium</h1>
+
+<%= render 'form', asistencium: @asistencium %>
+
+<%= link_to 'Show', @asistencium %> |
+<%= link_to 'Back', asistencia_path %>

@@ -1,4 +1,5 @@
-<div class="container">
-  <%= content_for :page_title, "Registrar una nueva asistencia" %>
-  <%= javascript_pack_tag 'registro_asistencia_form' %>
-</div>
+<h1>New Asistencium</h1>
+
+<%= render 'form', asistencium: @asistencium %>
+
+<%= link_to 'Back', asistencia_path %>

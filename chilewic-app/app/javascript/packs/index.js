@@ -3,14 +3,14 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 //creacion de rutas de acceso con react router
 import {BrowserRouter as Router, Route} from "react-router-dom"
-import App from "../components/App"
+import "./Signup"
 
 
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
     <Router>
-      <Route path="/" component={App} />
+      <Route exact path="/" component={Signup} />
     </Router>,
     document.body.appendChild(document.createElement('div')),
   )
