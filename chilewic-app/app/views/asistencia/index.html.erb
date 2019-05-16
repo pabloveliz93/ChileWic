@@ -1,15 +1,34 @@
 
-<!--
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
 
 <p id="notice"><%= notice %></p>
 
-<h1>Asistencia</h1>
+<h1>Lista de asistencia</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Correo</th>
       <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Correo</th>
+      <th>Teléfono</th>
+      <th>Institución</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,11 +36,14 @@
   <tbody>
     <% @asistencia.each do |asistencium| %>
       <tr>
-        <td><%= asistencium.correo %></td>
         <td><%= asistencium.nombre %></td>
-        <td><%= link_to 'Show', asistencium %></td>
-        <td><%= link_to 'Edit', edit_asistencium_path(asistencium) %></td>
-        <td><%= link_to 'Destroy', asistencium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= asistencium.apellido %></td>
+        <td><%= asistencium.correo %></td>
+        <td><%= asistencium.telefono %></td>
+        <td><%= asistencium.institucion %></td>
+        <td><%= link_to 'Ver datos', asistencium %></td>
+        <td><%= link_to 'Editar datos', edit_asistencium_path(asistencium) %></td>
+        <td><%= link_to 'Eliminar', asistencium, method: :delete, data: { confirm: '¿Estás seguro?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -29,8 +51,4 @@
 
 <br>
 
-<%= link_to 'New Asistencium', new_asistencium_path %>
-
-
-
--->
+<%= link_to 'Crear nueva asistencia', new_asistencium_path %>

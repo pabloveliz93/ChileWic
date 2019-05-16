@@ -69,6 +69,6 @@ class AsistenciaController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def asistencium_params
-      params.require(:asistencium).permit(:correo, :nombre)
+      params.require(:asistencium).permit(:nombre, :apellido, :correo, :telefono, :institucion)
     end
 end
