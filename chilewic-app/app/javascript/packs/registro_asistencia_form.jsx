@@ -1,15 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import RegistroAsistenciaForm from './registro_asistencia_form/RegistroAsistenciaForm';
+import RegistroAsistenciaForm from './registro_asistencia_form/RegistroAsistenciaForm'
+import {BrowserRouter as Router, Route} from "react-router-dom"
 
-window.jQuery(document).on('turbolinks:load', function () {
-  const el = document.getElementById('asistencia')
-  if(el != null) {
-    window.jQuery(document).on('turbolinks:before-cache', () => ReactDOM.unmountComponentAtNode(el))
-      ReactDOM.render(
-        <RegistroAsistenciaForm/>,
-        el
-      )
-    }
-  }
-)
+document.addEventListener('DOMContentLoaded', () => {
+  ReactDOM.render(
+    <Router>
+      <Route path="/" component={RegistroAsistenciaForm} />
+    </Router>,
+    document.body.appendChild(document.createElement('div')),
+  )
+})
