@@ -1,2 +1,0 @@
-class Asistencium < ApplicationRecord
-end

@@ -22,6 +22,7 @@ gem 'webpacker'
 gem 'rails_12factor', group: :production
 gem 'dotenv-rails'
 
+gem 'react_on_rails', '11.1.4' # Use the exact gem version to match npm version
 # Use bootstrap -ssas
 gem 'bootstrap-sass'
 # Use CoffeeScript for .coffee assets and views
@@ -38,7 +39,8 @@ gem 'jquery-rails'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
-
+gem 'rspec-core'
+gem 'rspec'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
