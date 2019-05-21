@@ -6,64 +6,20 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
 
 
 
 
-
-
-
-
-    <!-- Stylesheet bootstrap react components -->
-    <link   rel="stylesheet"   href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"   integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"   crossorigin="anonymous"/>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-    <!-- Bootstrap core CSS -->
-    <link href="http://blackrockdigital.github.io/startbootstrap-grayscale/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom fonts for this template -->
-    <link href="http://blackrockdigital.github.io/startbootstrap-grayscale/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="http://blackrockdigital.github.io/startbootstrap-grayscale/css/grayscale.min.css" rel="stylesheet">
-
-    <!-- Navigation -->
-    <div>
-      <%= javascript_pack_tag 'App' %>
-
-
-    </div>
   </head>
 
   <body>
 
+
     <%= yield %>
   </body>
 
-  <!-- Footer -->
-    <footer class="bg-black small text-center text-white-50">
-      <div class="container">
-        Realizado por el equipo TDD. Nicolás Araya, Josefa Gonzalez Diego Torreblanca y Pablo Veliz.
-      </div>
-    </footer>
-
-    <!-- react bootstrap componentes -->
-    <script src="https://unpkg.com/react/umd/react.production.js" crossorigin />
-    <script  src="https://unpkg.com/react-dom/umd/react-dom.production.js"  crossorigin />
-    <script  src="https://unpkg.com/react-bootstrap@next/dist/react-bootstrap.min.js"  crossorigin />
-    <script>var Alert = ReactBootstrap.Alert;</script>
-    <!-- Bootstrap core JavaScript -->
-    <script src="http://blackrockdigital.github.io/startbootstrap-grayscale/vendor/jquery/jquery.min.js"></script>
-    <script src="http://blackrockdigital.github.io/startbootstrap-grayscale/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="http://blackrockdigital.github.io/startbootstrap-grayscale/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for this template -->
-    <script src="http://blackrockdigital.github.io/startbootstrap-grayscale/js/grayscale.min.js"></script>
 </html>
