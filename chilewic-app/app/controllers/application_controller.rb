@@ -9,4 +9,7 @@ class ApplicationController < ActionController::Base
   end
   def index
   end
+  def edit
+    render action :'edit', layout: 'application/layout' # implicitly called
+  end
 end

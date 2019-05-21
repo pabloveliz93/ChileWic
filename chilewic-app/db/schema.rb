@@ -15,23 +15,7 @@ ActiveRecord::Schema.define(version: 2019_05_21_162023) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "asistencia", force: :cascade do |t|
-    t.string "correo"
-    t.string "nombre"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "asistentes", force: :cascade do |t|
-    t.string "nombre"
-    t.string "apellido"
-    t.string "mail"
-    t.integer "telefono"
-    t.string "institucion"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
+  
   create_table "logins", force: :cascade do |t|
     t.string "mail"
     t.string "contrasena"
