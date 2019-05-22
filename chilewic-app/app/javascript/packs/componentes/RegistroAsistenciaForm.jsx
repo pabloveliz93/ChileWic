@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Formik, ErrorMessage, Field } from "formik";
 import * as Yup from "yup";
 import classNames from "classnames";
-import FlashMessage from "../FlashMessage";
+import FlashMessage from "./FlashMessage";
 import axios from "axios";
 import * as _ from "lodash";
 //import { CustomSelect } from "../CustomInputs";
