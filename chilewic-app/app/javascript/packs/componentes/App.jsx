@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import {Router,Switch} from "react-router-dom"
+import {Route,Switch} from "react-router-dom"
+import Login from "./Login"
+import Registro from "./Registro"
 
 
 
@@ -9,6 +11,10 @@ export default class App extends Component {
     return (
       <div>
         <switch>
+          <Route exact path="/" component = {Login} />
+          <Route exact path="/about" component = {Registro} />
+          
+
         </switch>
       </div>
     );
