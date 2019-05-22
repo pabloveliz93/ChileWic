@@ -117,7 +117,7 @@ class Login extends Component {
         msg={this.state.ui.message}
       />
     ) : null;
-    const button_label = "Agregar";//this.props.cityId ? "Editar" : "Agregar nueva";
+    const button_label = "Log in";//this.props.cityId ? "Editar" : "Agregar nueva";
   /*  const countries_options = this.state.countries.map(country => (
       <option value={country.id} key={country.id}>
         {country.description}
@@ -186,7 +186,7 @@ class Login extends Component {
                   <div className="card">
                     <div className="card-body">
                       <div className="row">
-                        <div className="col-lg-6">
+                        <div className="col-lg-12">
                           <div className="form-group mb-3">
 
 
@@ -194,7 +194,7 @@ class Login extends Component {
                               E-Mail
                             </label>
                           <Field
-                          type="text"
+                          type="email"
                           name="mail"
                           className={
                             "form-control " +
@@ -220,7 +220,7 @@ class Login extends Component {
 
                         </div>
                         </div>
-                        <div className="col-lg-6">
+                        <div className="col-lg-12">
                           <div className="form-group mb-3">
 
 
@@ -228,15 +228,15 @@ class Login extends Component {
                           contraseña
                           </label>
                         <Field
-                        type="text"
+                        type="password"
                         name="contrasena"
                         className={
                           "form-control " +
                           classNames({
                             "is-invalid":
-                              touched.apellido && errors.contrasena,
+                              touched.contrasena && errors.contrasena,
                             "is-valid":
-                              touched.apellido && !errors.contrasena
+                              touched.contrasena && !errors.contrasena
                           })
                         }
                         />

@@ -8,8 +8,11 @@ import * as _ from "lodash";
 //import { CustomSelect } from "../CustomInputs";
 
 const RegistroAsistenciaSchema = Yup.object().shape({
-  /*nombre: Yup.string().required("Campo requerido"),
-  country: Yup.string().required("Campo requerido")*/
+  nombre: Yup.string().required("Campo requerido"),
+  apellido: Yup.string().required("Campo requerido"),
+  mail: Yup.string().email("Debe tener formato de email").required("Campo requerido"),
+  telefono: Yup.number().integer("Deben ser números").required("Campo requerido"),
+  institucion: Yup.string().required("Campo requerido"),
 });
 
 class RegistroAsistenciaForm extends Component {
