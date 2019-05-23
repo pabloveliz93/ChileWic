@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap"
-import {Navbar, NavItem, NavDropdown, MenuItem, Nav, Link} from "react-bootstrap"
+import {Navbar, Nav,NavDropdown} from "react-bootstrap"
+import {Link} from "react-router-dom"
 
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
@@ -11,12 +12,19 @@ import PropTypes from 'prop-types'
 class Toolbar extends Component {
   render () {
     return (
-      <Navbar collapseOnSelect expand="lg" bg="secondary" variant="dark">
-  <Navbar.Brand href="/">ChileWic</Navbar.Brand>
-  <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-  <Navbar.Collapse id="responsive-navbar-nav">
-    <Nav className="mr-auto">
-      <Nav.Item><Nav.Link href="/about">About</Nav.Link></Nav.Item>
+      <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
+         <Navbar.Brand >
+         <Link to="/">ChileWic</Link></Navbar.Brand>
+           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+             <Navbar.Collapse id="responsive-navbar-nav">
+               <Nav className="mr-auto">
+                 <Nav.Item>
+
+
+                  <Nav.Link >
+                  <Link to="/about">About</Link>
+                  </Nav.Link>
+                  </Nav.Item>
       <Nav.Link href="#pricing">Pricing</Nav.Link>
       <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
         <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>

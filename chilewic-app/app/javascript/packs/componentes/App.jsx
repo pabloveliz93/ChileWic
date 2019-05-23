@@ -1,10 +1,13 @@
 import React, { Component } from "react";
-import {Route,Switch,Router} from "react-router-dom"
+import {BrowserRouter as Router,Route,Switch} from "react-router-dom"
 import Login from "./Login"
 import Registro from "./Registro"
 import RegistroAsistenciaForm from "./RegistroAsistenciaForm"
 import Home from "./Home"
+import {NoMatch404} from "./inicio/NoMatch404"
 import Toolbar from "./inicio/Toolbar"
+import {Layout} from "./inicio/Layout"
+import Footer from "./inicio/Footer"
 
 
 
@@ -13,21 +16,24 @@ export default class App extends Component {
   render() {
     return (
       <React.Fragment>
-      <Toolbar />
+       <Router>
+       <Toolbar />
+         <Layout>
+
+              <Switch>
+                <Route exact path="/" component = {Home} />
+                <Route path="/about" component = {Registro} />
+                <Route  path = "/registroasistencia" component = {RegistroAsistenciaForm} />
+                <Route component= {NoMatch404} />
+              </Switch>
+
+              </Layout>
+              <Footer/>
+
+             </Router>
 
 
-        <Switch>
-
-
-          <Route exact path="/" component = {Home} />
-          <Route exact path="/about" component = {Registro} />
-          <Route exact path = "/registroasistencia" component = {RegistroAsistenciaForm} />
-
-
-
-        </Switch>
-        
-        </React.Fragment>
+       </React.Fragment>
 
     );
   }
