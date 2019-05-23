@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import {Route,Switch} from "react-router-dom"
+import {Route,Switch,Router} from "react-router-dom"
 import Login from "./Login"
 import Registro from "./Registro"
 import RegistroAsistenciaForm from "./RegistroAsistenciaForm"
-
+import Home from "./Home"
+import Toolbar from "./inicio/Toolbar"
 
 
 
@@ -11,15 +12,23 @@ import RegistroAsistenciaForm from "./RegistroAsistenciaForm"
 export default class App extends Component {
   render() {
     return (
-      <div>
-        <switch>
-          <Route exact path="/" component = {Login} />
+      <React.Fragment>
+      <Toolbar />
+
+
+        <Switch>
+
+
+          <Route exact path="/" component = {Home} />
           <Route exact path="/about" component = {Registro} />
           <Route exact path = "/registroasistencia" component = {RegistroAsistenciaForm} />
 
 
-        </switch>
-      </div>
+
+        </Switch>
+        
+        </React.Fragment>
+
     );
   }
 }
