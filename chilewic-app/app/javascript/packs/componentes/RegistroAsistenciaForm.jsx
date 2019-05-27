@@ -12,18 +12,11 @@ const RegistroAsistenciaSchema = Yup.object().shape({
   apellido: Yup.string().required("Campo requerido"),
   mail: Yup.string().email("Debe tener formato de email").required("Campo requerido"),
   telefono: Yup.number().integer("Deben ser números").required("Campo requerido"),
-  institucion: Yup.string().required("Campo requerido"),
+  institucion: Yup.string().required("Campo requerido")
 });
 
 class RegistroAsistenciaForm extends Component {
   state = {
-    persona: {
-      nombre: "",
-      apellido: "",
-      mail: "",
-      telefono: "",
-      institucion: ""
-    },
     ui: {
       isSubmitting: false,
       showMessage: false,

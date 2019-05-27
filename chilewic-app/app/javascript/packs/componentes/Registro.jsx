@@ -8,20 +8,15 @@ import * as _ from "lodash";
 //import { CustomSelect } from "../CustomInputs";
 
 const RegistroSchema = Yup.object().shape({
-  /*nombre: Yup.string().required("Campo requerido"),
-  country: Yup.string().required("Campo requerido")*/
+  nombre: Yup.string().required("Campo requerido"),
+  apellido: Yup.string().required("Campo requerido"),
+  mail: Yup.string().email("Debe tener formato de email").required("Campo requerido"),
+  telefono: Yup.number().integer("Deben ser números").required("Campo requerido"),
+  institucion: Yup.string().required("Campo requerido")
 });
 
-class Registro extends Component {
+class RegistroForm extends Component {
   state = {
-    persona: {
-      nombre: "",
-      apellido: "",
-      mail: "",
-      telefono: "",
-      institucion: "",
-      contrasena: ""
-    },
     ui: {
       isSubmitting: false,
       showMessage: false,
@@ -142,7 +137,7 @@ class Registro extends Component {
               ? `/admin/cities/${this.props.cityId}.json`
               : `/admin/cities.json`;*/
             /*const method = this.props.cityId ? "PUT" : "POST";*/
-            const url = `/registro.json`;
+            const url = `/registro_asistencia.json`;
             const method = "POST";
             axios(url,{
               method,
@@ -345,35 +340,6 @@ class Registro extends Component {
                   </ErrorMessage>
 
 
-                  <label htmlFor="Contrasena">
-                    Contraseña
-                  </label>
-
-                  <Field
-                    type="text"
-                    name="contrasena"
-                    className={
-                      "form-control " +
-                      classNames({
-                        "is-invalid":
-                          touched.nombre && errors.contrasena,
-                        "is-valid":
-                          touched.nombre && !errors.contrasena
-                      })
-                    }
-                  />
-                  <ErrorMessage name="contrasena">
-                    {msg => (
-                      <div
-                        className="invalid-feedback"
-                        style={{ display: "block" }}
-                      >
-                        {msg}
-                      </div>
-                    )}
-                  </ErrorMessage>
-
-
                           </div>
                         </div>
                       </div>
@@ -396,4 +362,4 @@ class Registro extends Component {
   }
 }
 
-export default Registro;
+export default RegistroForm;
