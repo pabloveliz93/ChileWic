@@ -9,16 +9,17 @@ import Carrusel from "./inicio/Carrusel"
 
 
 
+
 export default class Home extends Component {
   render() {
     return (
 
-      <Container>
+
            <Carrusel/>
 
 
 
-</Container>
+
 
 
 
