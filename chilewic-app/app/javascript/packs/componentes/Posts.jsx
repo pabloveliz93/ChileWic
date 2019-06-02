@@ -1,14 +1,16 @@
+// app/javascript/components/Posts.js
+
 import React from 'react'
 import axios from 'axios'
 
 class Posts extends React.Component {
   state = {
-    posts: []
+    posts: ""
   };
 
   componentDidMount() {
     axios
-      .get('/api/posts')
+      .get('/api/asistencias')
       .then(response => {
         this.setState({ posts: response.data.posts });
       })
@@ -17,9 +19,7 @@ class Posts extends React.Component {
   renderAllPosts = () => {
     return(
       <ul>
-        {this.state.posts.map(post => (
-          <li key={post}>{post}</li>
-        ))}
+        {this.state.posts}
       </ul>
     )
   }
