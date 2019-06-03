@@ -1,21 +1,33 @@
 module API
   class AsistenciasController < ApplicationController
     def index
-        asistencias = Asistencium.order("created_at DESC")
+        @asistencia = Asistencium.all
 
-      render json: { asistencias: asistencias }
+      render json: { asistencias: @asistencias }
+    end
+
+    def new
+      @asistencium = Asistencium.new
     end
 
     def create
-      asistencium = Asistencium.create(asistencium_param)
-      render json: asistencium
+      @asistencium = Asistencium.new(asistencium_params)
+      if @asistencium.save
+        format.html { redirect_to @asistencium, notice: 'Asistencium was successfully created.' }
+        format.json { render :show, status: :created, location: @asistencium }
+      else
+        format.html { render :new }
+        format.json { render json: @asistencium.errors, status: :unprocessable_entity }
+      end
+
+
 
     end
 
 
 
     private
-    def asistencium_param
+    def asistencium_params
       params.require(:asistencium).permit(:nombre, :apellido, :correo, :telefono, :institucion)
     end
   end

@@ -10,7 +10,7 @@ import * as _ from "lodash";
 const RegistroSchema = Yup.object().shape({
   nombre: Yup.string().required("Campo requerido"),
   apellido: Yup.string().required("Campo requerido"),
-  mail: Yup.string().email("Debe tener formato de email").required("Campo requerido"),
+  correo: Yup.string().email("Debe tener formato de email").required("Campo requerido"),
   telefono: Yup.number().integer("Deben ser números").required("Campo requerido"),
   institucion: Yup.string().required("Campo requerido")
 });
@@ -137,7 +137,7 @@ class RegistroForm extends Component {
               ? `/admin/cities/${this.props.cityId}.json`
               : `/admin/cities.json`;*/
             /*const method = this.props.cityId ? "PUT" : "POST";*/
-            const url = `/registro_asistencia.json`;
+            const url = `api/asistencias`;
             const method = "POST";
             axios(url,{
               method,
@@ -146,11 +146,11 @@ class RegistroForm extends Component {
               headers: {
                 "Content-Type": "application/json"
               },
-              data: { persona: values }
+              data:  {asistencium: values }
             })
               .then(response => {
                 if (response.data.success) {
-                  window.location.assign(`/personas?success=1`);
+                  window.location.assign(`/asistencia?success=1`);
                 } else {
                   this.showMessage({
                     show_message: true,
@@ -216,23 +216,23 @@ class RegistroForm extends Component {
                               )}
                             </ErrorMessage>
 
-                            <label htmlFor="mail">
+                            <label htmlFor="correo">
                               E-Mail
                             </label>
                           <Field
                           type="text"
-                          name="mail"
+                          name="correo"
                           className={
                             "form-control " +
                             classNames({
                               "is-invalid":
-                                touched.mail && errors.mail,
+                                touched.correo && errors.correo,
                               "is-valid":
-                                touched.mail && !errors.mail
+                                touched.correo && !errors.correo
                             })
                           }
                           />
-                          <ErrorMessage name="mail">
+                          <ErrorMessage name="correo">
                           {msg => (
                             <div
                               className="invalid-feedback"

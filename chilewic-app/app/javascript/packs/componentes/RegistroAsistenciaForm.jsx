@@ -146,11 +146,11 @@ class RegistroAsistenciaForm extends Component {
               headers: {
                 "Content-Type": "application/json"
               },
-              data: { persona: values }
+              data: { asistencia: values }
             })
               .then(response => {
                 if (response.data.success) {
-                  window.location.assign(`/personas?success=1`);
+                  window.location.assign(`/asistencia?success=1`);
                 } else {
                   this.showMessage({
                     show_message: true,
