@@ -11,7 +11,7 @@ module API
     end
 
     def show
-    render json: { status: 'SUCCESS', message: "asistencia #{@aasistencium.id} Loaded", data: @aasistencium }, status: :ok
+    render json: { status: 'SUCCESS', message: "asistencia #{@asistencium.id} Loaded", data: @aasistencium }, status: :ok
   end
 
 

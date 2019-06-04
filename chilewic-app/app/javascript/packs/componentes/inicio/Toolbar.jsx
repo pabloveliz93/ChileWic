@@ -1,7 +1,9 @@
 import React, { Component } from "react";
-import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap"
+import { Button, FormGroup, FormControl, FormLabel ,ButtonToolbar} from "react-bootstrap"
 import {Navbar, Nav,NavDropdown} from "react-bootstrap"
 import {Link} from "react-router-dom"
+import CModal from "./Modal";
+
 
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
@@ -10,11 +12,17 @@ import PropTypes from 'prop-types'
 
 
 class Toolbar extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { modalShow: false };
+  }
   render () {
+      let modalClose = () => this.setState({ modalShow: false });
     return (
-      <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
+      <Navbar  collapseOnSelect expand="lg" bg="dark" variant="dark">
          <Navbar.Brand >
-         <Link to="/">ChileWic</Link></Navbar.Brand>
+         <Link to="/"><img width="150" height="30" className="d-inline-block align-top" src={require('./asserts/fondo.png')} /></Link></Navbar.Brand>
            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
              <Navbar.Collapse id="responsive-navbar-nav">
                <Nav className="mr-auto">
@@ -35,10 +43,19 @@ class Toolbar extends Component {
       </NavDropdown>
     </Nav>
     <Nav>
-      <Nav.Link href="#deets">More deets</Nav.Link>
-      <Nav.Link eventKey={2} href="#memes">
-        Dank memes
-      </Nav.Link>
+    <ButtonToolbar>
+      <Button
+        variant="primary"
+        onClick={() => this.setState({ modalShow: true })}
+      >
+        Registro
+      </Button>
+
+      <CModal
+        show={this.state.modalShow}
+        onHide={modalClose}
+      />
+    </ButtonToolbar>
     </Nav>
   </Navbar.Collapse>
 </Navbar>

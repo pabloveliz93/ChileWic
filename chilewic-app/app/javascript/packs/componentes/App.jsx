@@ -8,7 +8,7 @@ import {NoMatch404} from "./inicio/NoMatch404"
 import Toolbar from "./inicio/Toolbar"
 import {Layout} from "./inicio/Layout"
 import Footer from "./inicio/Footer"
-import Posts from "./Posts"
+
 import Formulary from "./Formulary"
 
 
@@ -26,7 +26,6 @@ export default class App extends Component {
                 <Route exact path="/" component = {Home} />
                 <Route path="/about" component = {Registro} />
                 <Route path="/formulario" component = {Formulary} />
-                <Route path="/posts" component = {Posts} />
                 <Route  path = "/registroasistencia" component = {RegistroAsistenciaForm} />
                 <Route component= {NoMatch404} />
               </Switch>

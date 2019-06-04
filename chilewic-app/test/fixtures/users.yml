@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  apellido: MyString
+  usuario: MyString
+  ciudad: MyString
+  institucion: MyString
+  grado: MyString
+  acept: false
+
+two:
+  nombre: MyString
+  apellido: MyString
+  usuario: MyString
+  ciudad: MyString
+  institucion: MyString
+  grado: MyString
+  acept: false
