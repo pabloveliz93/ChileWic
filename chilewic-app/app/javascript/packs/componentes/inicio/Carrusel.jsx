@@ -31,7 +31,7 @@ handleSelect(selectedIndex, e) {
     return (
       <Carousel activeIndex={index} direction={direction} onSelect={this.handleSelect}>
         <Carousel.Item>
-          <img   className="w-auto p-3" src={require('./asserts/2.jpeg')} alt="900x500" />
+          <img   className="w-auto p-3" src={require('./asserts/2.jpg')} alt="900x500" />
             <Carousel.Caption>
               <h3> first label </h3>
               <p>nulla </p>

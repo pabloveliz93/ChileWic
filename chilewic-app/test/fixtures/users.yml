@@ -3,6 +3,7 @@
 one:
   nombre: MyString
   apellido: MyString
+  correo: MyString
   usuario: MyString
   ciudad: MyString
   institucion: MyString
@@ -12,6 +13,7 @@ one:
 two:
   nombre: MyString
   apellido: MyString
+  correo: MyString
   usuario: MyString
   ciudad: MyString
   institucion: MyString
