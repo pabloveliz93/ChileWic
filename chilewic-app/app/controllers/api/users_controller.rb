@@ -1,19 +1,19 @@
 module API
 class UsersController < ApplicationController
 
-  # GET /lists
+  # GET /users
      def index
        @users = User.order(:id)
 
        render json: @users
      end
 
-     # GET /lists/1
+     # GET /users/1
      def show
        render json: @user
      end
 
-     # POST /lists
+     # POST /users
      def create
        @user = User.new(user_params)
 
@@ -24,7 +24,7 @@ class UsersController < ApplicationController
        end
      end
 
-     # PATCH/PUT /lists/1
+     # PATCH/PUT /users/2
      def update
        if @user.update(user_params)
          render json: @user
@@ -33,7 +33,22 @@ class UsersController < ApplicationController
        end
      end
 
-     # DELETE /lists/1
+     # GET /users/:all
+     def find
+       @user = User.find_by(email: params[:usuario][:email])
+        if @user
+          render json: @user
+        else
+          @errors = @user.errors.full_messages
+          render json: @errors
+        end
+    end
+
+
+
+
+
+     # DELETE /users/1
      def destroy
        @user.destroy
        if @user.destroy
@@ -44,11 +59,11 @@ class UsersController < ApplicationController
      end
 
      private
-       # Use callbacks to share common setup or constraints between actions.
+
 
        # Only allow a trusted parameter "white list" through.
        def user_params
-         params.require(:user).permit(:nombre, :apellido, :usuario, :ciudad, :institucion, :grado, :acept)
+         params.require(:user).permit(:nombre, :apellido, :usuario,:password, :ciudad, :institucion, :grado, :acept)
        end
    end
  end

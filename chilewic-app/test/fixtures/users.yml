@@ -5,6 +5,7 @@ one:
   apellido: MyString
   correo: MyString
   usuario: MyString
+  password: MyString
   ciudad: MyString
   institucion: MyString
   grado: MyString
@@ -15,6 +16,7 @@ two:
   apellido: MyString
   correo: MyString
   usuario: MyString
+  password: MyString
   ciudad: MyString
   institucion: MyString
   grado: MyString

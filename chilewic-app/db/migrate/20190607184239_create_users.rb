@@ -5,6 +5,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :apellido
       t.string :correo
       t.string :usuario
+      t.string :password
       t.string :ciudad
       t.string :institucion
       t.string :grado

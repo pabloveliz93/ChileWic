@@ -7,4 +7,4 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Asistencium.create(nombre:"beto", apellido:"cuevas",correo:"a@gmail.com",telefono:"+569876543",institucion:"udp")
-User.create(nombre:"jose", apellido:"rafales",correo:"a@gmail.com",usuario: "jrafales1",ciudad:"san rosendo",institucion:"u de chillan",acept:true)
+User.create(nombre:"jose", apellido:"rafales",correo:"a@gmail.com",usuario: "jrafales1",password:"hola",ciudad:"san rosendo",institucion:"u de chillan",acept:true)

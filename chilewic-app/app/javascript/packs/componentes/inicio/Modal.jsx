@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Modal from 'react-bootstrap/Modal';
-import RegisterUser from "./RegisterUser";
+
 
 import Button from 'react-bootstrap/Button';
 
@@ -21,7 +21,7 @@ export default class CModal extends Component {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <RegisterUser/>
+          
         </Modal.Body>
         <Modal.Footer>
           <Button onClick={this.props.onHide}>Close</Button>

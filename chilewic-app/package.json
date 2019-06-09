@@ -4,7 +4,7 @@
   "dependencies": {
     "@babel/preset-react": "^7.0.0",
     "@rails/webpacker": "^4.0.2",
-    "antd": "^3.18.1",
+    "antd": "^3.19.2",
     "axios": "^0.18.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "bootstrap": "^4.3.1",
@@ -20,6 +20,7 @@
     "react-router": "^5.0.0",
     "react-router-dom": "^5.0.0",
     "react-spinners": "^0.5.4",
+    "validator": "^11.0.0",
     "yup": "^0.27.0"
   },
   "devDependencies": {

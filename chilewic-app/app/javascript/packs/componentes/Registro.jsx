@@ -43,6 +43,8 @@ class RegistroForm extends Component {
   render() {
     const flash_message = this.state.ui.showMessage ? ( <FlashMessage type={this.state.ui.messageType} msg={this.state.ui.message}/> ) : null;
     const button_label = "Agregar";
+    
+
 
 
     return (
