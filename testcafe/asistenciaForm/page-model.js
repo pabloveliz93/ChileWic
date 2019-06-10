@@ -12,8 +12,12 @@ export default class Page {
        this.botonlogin          = Selector('#new_user > div.actions > input[type="submit"]');
       
        // Selecciona el elemento que contiene el botón Ingresar Asistencia
-       this.botonAsistencia          = Selector('body > div:nth-child(1) > a:nth-child(2)');
+       this.botonAsistencia          = Selector('#navbar > ul:nth-child(1) > li:nth-child(2) > a');
       
+
+       // Selecciona el elemento que contiene el input de Crear nueva asistencia
+       this.crearAsistenciaInput         = Selector('body > a:nth-child(8)');
+
        // Selecciona el elemento que contiene el input de Nombre
        this.nameInput         = Selector('input[name=nombre]');
 
@@ -31,7 +35,7 @@ export default class Page {
        
        
        // Selecciona el elemento que contiene el botón Agregar nueva asistencia
-       this.botonAgregar                 = Selector('body > div:nth-child(2) > div > form > div > div > button');
+       this.botonAgregar                 = Selector('body > div:nth-child(3) > div > form > div > div > button');
       
        // Selecciona el elemento que contiene el botón Buscar
        //this.buscar                = Selector('#body > div > app-plantilla > div > div.panel-body > div > div > form > div:nth-child(3) > div > button.btn.btn-primary');

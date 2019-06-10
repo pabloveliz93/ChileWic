@@ -14,12 +14,13 @@ test('Iniciando Pruebas', async t => {
       .typeText(page.passwordInput, 'hola123')
       .click(page.botonlogin)
       .click(page.botonAsistencia)
+      .click(page.crearAsistenciaInput)
       .typeText(page.nameInput, 'Jorge')
       .typeText(page.mailInput, 'jorge@mail.com')
       .typeText(page.lastnameInput, 'Arenas')
       .typeText(page.telefonoInput, '91111111')
       .typeText(page.institucionInput, 'Universidad')
       .click(page.botonAgregar)
-      .wait(1000);
+      .wait(2000);
 
 });
