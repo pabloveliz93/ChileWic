@@ -2,6 +2,19 @@ import { Selector } from 'testcafe';
 
 export default class Page {
    constructor () {
+
+    // Selecciona el elemento que contiene el input de E-Mail
+    this.mail1Input      = Selector('#user_email');
+
+    // Selecciona el elemento que contiene el input de Password
+    this.passwordInput  = Selector('#user_password');
+
+    // Selecciona el elemento que contiene el botón Sing up
+    this.botonlogin          = Selector('#new_user > div.actions > input[type="submit"]');
+   
+    // Selecciona el elemento que contiene el botón Sing up
+    this.botonPropuesta         = Selector('#navbar > ul:nth-child(1) > li:nth-child(3) > a');
+   
        // Selecciona el elemento que contiene el input de Nombre
        this.nameInput         = Selector('input[name=nombre]');
 
