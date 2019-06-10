@@ -14,6 +14,6 @@ test('Iniciando Pruebas: Ver asistencia', async t => {
        .typeText(page.passwordInput, 'hola123')
        .click(page.boton)
        .click(page.botonVerAsistencias)
-       .wait(1000);
+       .wait(2000);
 
 });

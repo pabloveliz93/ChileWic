@@ -13,7 +13,7 @@ export default class Page {
        this.boton          = Selector('#new_admin > div.actions > input[type="submit"]');
       
        // Selecciona el elemento que contiene el botón Ver asistencias
-       this.botonVerAsistencias   = Selector('body > div:nth-child(1) > a:nth-child(2)');
+       this.botonVerAsistencias   = Selector('#navbar > ul:nth-child(1) > li:nth-child(2) > a');
              
    }
 }
